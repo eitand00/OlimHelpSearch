@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OlimHelpSearch — מצא בעל מקצוע בשפה שלך</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">🛠️</span>
+        <span class="logo-text">OlimHelp<strong>Search</strong></span>
+      </div>
+      <div class="lang-selector">
+        <label for="langSelect" id="langLabel">🌐 שפה / Language:</label>
+        <select id="langSelect" onchange="changeLanguage(this.value)">
+          <option value="he" selected>🇮🇱 עברית (RTL)</option>
+          <option value="fr">🇫🇷 Français (LTR)</option>
+          <option value="en">🇬🇧 English (LTR)</option>
+          <option value="ru">🇷🇺 Русский (LTR)</option>
+          <option value="es">🇪🇸 Español (LTR)</option>
+          <option value="ar">🇸🇦 العربية (RTL)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section & Search (Screen 01) -->
+  <main class="main-content">
+    <section class="hero-section">
+      <h1 id="heroTitle">מצא את בעל המקצוע המתאים — בשפה שלך</h1>
+      <p id="heroSubtitle">פלטפורמה חכמה לעולים חדשים בישראל לחיבור ישיר עם אינסטלטורים, חשמלאים וטכנאים</p>
+      
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="למשל: נזילה מתחת לכיור בירושלים, דחוף להיום..." />
+        <button id="searchBtn" onclick="performSearch()">🔍 חפש בעל מקצוע</button>
+      </div>
+
+      <!-- Quick Category Shortcuts -->
+      <div class="quick-categories">
+        <span id="quickLabel">קטגוריות מהירות:</span>
+        <button class="cat-chip" onclick="filterCategory('אינסטלטור')">🔧 <span class="cat-name">אינסטלציה</span></button>
+        <button class="cat-chip" onclick="filterCategory('חשמלאי')">⚡ <span class="cat-name">חשמל</span></button>
+        <button class="cat-chip" onclick="filterCategory('מנעולן')">🔑 <span class="cat-name">מנעולנות</span></button>
+        <button class="cat-chip" onclick="filterCategory('מיזוג')">❄️ <span class="cat-name">מיזוג אוויר</span></button>
+      </div>
+    </section>
+
+    <!-- Results Section (Screen 02) -->
+    <section class="results-section">
+      <div class="results-header">
+        <h2 id="resultsTitle">בעלי מקצוע זמינים</h2>
+        <span id="resultsCount" class="badge-count">טוען נתונים...</span>
+      </div>
+      <div id="resultsGrid" class="results-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- Quick Add Professional Form (Team Requirement Stage C1) -->
+    <section class="add-section">
+      <h3 id="addTitle">➕ הוספת בעל מקצוע (בדיקת כתיבה לבסיס הנתונים — שלב ג1)</h3>
+      <form id="addProForm" onsubmit="handleFormSubmit(event)" class="form-card">
+        <div class="form-row">
+          <input type="text" id="proName" placeholder="שם מלא (Full Name)" required />
+          <input type="text" id="proProfession" placeholder="מקצוע (Profession)" required />
+        </div>
+        <div class="form-row">
+          <input type="text" id="proCity" placeholder="עיר שירות (City)" required />
+          <input type="text" id="proPhone" placeholder="טלפון ישראלי (Phone)" required />
+        </div>
+        <div class="form-row">
+          <input type="text" id="proLanguages" placeholder="שפות מופרדות בפסיקים (צרפתית, עברית...)" required />
+          <input type="text" id="proPrice" placeholder="מחיר אינדיקטיבי (Indicative Price)" />
+        </div>
+        <div class="form-row check-row">
+          <label>
+            <input type="checkbox" id="proAvailableToday" />
+            <span id="availLabel">זמין לקריאות היום (Available Today)</span>
+          </label>
+          <button type="submit" id="submitBtn">שמור בעל מקצוע</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>OlimHelpSearch © 2026-2027 | פרויקט הנדסת תוכנה — נתנאל דריי, אבי אברהם אלבז, איתן דהן</p>
+  </footer>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
