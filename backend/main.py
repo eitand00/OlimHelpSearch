@@ -44,7 +44,7 @@ MOCK_PROFESSIONALS = [
         "service_city": "ירושלים / Jerusalem",
         "phone": "050-1234567",
         "whatsapp": "0501234567",
-        "indicative_price": "250-350 ש"ח",
+        "indicative_price": "250-350 ILS",
         "available_today": True,
         "status": "Published"
     },
@@ -56,7 +56,7 @@ MOCK_PROFESSIONALS = [
         "service_city": "נתניה / Netanya",
         "phone": "052-7654321",
         "whatsapp": "0527654321",
-        "indicative_price": "300 ש"ח",
+        "indicative_price": "300 ILS",
         "available_today": False,
         "status": "Published"
     },
@@ -68,7 +68,7 @@ MOCK_PROFESSIONALS = [
         "service_city": "חיפה / Haifa",
         "phone": "053-9988776",
         "whatsapp": "0539988776",
-        "indicative_price": "200-300 ש"ח",
+        "indicative_price": "200-300 ILS",
         "available_today": True,
         "status": "Published"
     },
@@ -80,7 +80,7 @@ MOCK_PROFESSIONALS = [
         "service_city": "תל אביב / Tel Aviv",
         "phone": "054-1122334",
         "whatsapp": "0541122334",
-        "indicative_price": "350 ש"ח",
+        "indicative_price": "350 ILS",
         "available_today": True,
         "status": "Published"
     },
